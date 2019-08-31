@@ -1,0 +1,63 @@
+
+body{
+    background-color: #232332;
+    }
+
+h2{
+
+    color: gainsboro;
+    margin: 15px auto;
+    text-align: center;
+    width: auto;
+    height: 55px;
+    font-size: 3.5fr;
+    padding-top: 15px;
+    border-bottom: 2px solid red;
+    }
+
+.square{
+    width:30%;
+    background-color: darkviolet;
+    padding-top:30%;
+    float: left;
+    margin: 1.6%;
+    border-radius: 10%;
+    }
+
+#container{
+    width:500px;
+    margin:0 auto;
+    padding-top: 6%;
+    }
+
+#stripe{
+    width: 100%;
+    word-spacing: 7px;
+    height: 1.6em;
+    background-color: gainsboro;
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+
+}
+
+button{
+  padding-left: 5%;
+  border-radius: 20%;
+  border-width: medium;
+  label: none
+}
+
+#restart{
+  background-color: blue;
+  color: fff;
+}
+
+#easy-mode{
+  background-color: rgb(230,170,20);
+  color: fff;
+}
+
+#hard-mode{
+  background: red;
+  color: fff;
+}

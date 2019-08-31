@@ -1,52 +1,19 @@
 <html>
     <head>
         <title>RGB COLOR GAME</title>
-
-            <style type="text/css">
-
-                body{
-                    background-color:#232332;
-                    }
-                h2{
-                    color:gainsboro;
-                    margin:30px auto;
-                    text-align: center;
-                    }
-                .square{
-                    width:30%;
-                    background-color: darkviolet;
-                    padding-top:30%;
-                    float: left;
-                    margin: 1.6%;
-                    border-radius: 10%;
-                    }
-                #container{
-                    width:500px;
-                    margin:0 auto;
-                    }
-
-                #stripe{
-                    width: 100%;
-                    height: 2em;
-                    background-color: rgb(164, 168, 151);
-                    margin: 0px 0px 20px 0px;
-                    text-align: center;
-                }
-
-
-            </style>
-
+        <link rel="stylesheet" href="newcolor.css">
     </head>
 
     <body>
 
-            <h2 style="background-color: rgb(26, 134, 171);">THE GREAT RGB COLOR <span id="pickedColor">rgb(26, 134, 171)</span> GAME</h2>
+            <h2> THE GREAT RGB COLOR <span id="pickedColor">rgb(26, 134, 171)</span> GAME</h2>
             <div id="stripe">
                 <button id="restart">RESTART</button>
-                <span id="message">You got It</span>
-                <button id="easy-mode">EASY</button>
-                <button id="hard-mode">HARD</button>
+                <span id="message"></span>
+                <button id="easy-mode" class="mode">EASY</button>
+                <button id="hard-mode" class="mode">HARD</button>
             </div>
+
             <div id="container">
             <div class="square" style="background-color: rgb(26, 134, 171);"></div>
             <div class="square" style="background-color: rgb(26, 134, 171);"></div>
@@ -56,104 +23,7 @@
             <div class="square" style="background-color: rgb(26, 134, 171);"></div>
             </div>
 
+        <script type="text/javascript" src="newcolor.js"></script>
+    </body>
 
-
-        <!--logic goes here-->
-        <script type="text/javascript">
-            // get ui variables
-            let squares = document.querySelectorAll('.square');
-            let picked = document.getElementById('pickedColor');
-            let h2 = document.querySelector('h2')
-            let container = document.getElementById('container');
-            let message = document.querySelector('#message');
-            let restart = document.querySelector('#restart');
-            let easyMode = document.querySelector('#easy-mode');
-            let hardMode = document.querySelector('#hard-Mode');
-
-
-            console.log(picked);
-            //get event listener on restart
-             restart.addEventListener('click', function(){
-
-            })
-
-            //get random color
-           function getRandomColor(num){
-                var letters = '0123456789ABCDEF'.split('');
-                var color = '#';
-                for(var num = 0; num < squares.length; num++){
-                color += letters[Math.floor(Math.random()* 16)];
-                }
-                return color;
-           }
-
-
-
-           //get random color for the squares
-           for (var i = 0; i < squares.length; i++) {
-                squares[i].style.backgroundColor = getRandomColor(6);
-                //get eventlistener on clickedcolor
-
-                squares[i].addEventListener('click', function(){
-                   // get clicked color
-                  let clickedColor = this.style.backgroundColor;
-                  if(clickedColor === picked.textContent){
-                     changeColor(clickedColor);
-                     h2.style.backgroundColor = clickedColor;
-                     message.innerText = 'You got It';
-                  }else{
-                      this.style.backgroundColor = '#232332';
-                      message.innerText = 'Try Again';
-                  }
-                })
-            }
-
-
-
-           // get change color
-           function changeColor(target){
-                for(let i =0; i < squares.length; i++)
-                squares[i].style.backgroundColor = target;
-           }
-
-
-
-
-
-             // get picked color
-             picked.textContent = squares[Math.floor(Math.random() * squares.length)].style.backgroundColor;
-
-
-     /*      // always get one textContent of the color randomly
-           pickedColor.innerText = squares[Math.floor(Math.random() *7)].style.backgroundColor;
-            console
-
-            //create a function to get clickedColor
-
-            function clickedColor(target){
-                //console.log(target.style.backgroundColor);
-               if(target.style.backgroundColor === pickedColor.innerText){
-                    squares.forEach(square => {
-                        square.style.backgroundColor = pickedColor;
-                        h2.style.backgroundColor = pickedColor;
-                    });
-
-               }else{
-                    this.style.backgroundColor = 'none';
-                }
-            }
-
-
-
-            //add Event listener for clickedColor
-            squares.addEventListener('click', function(e){
-                clickedColor(e.target);
-
-                e.preventDefault();
-            }) */
-
-        </script>
-
-
-
-    </body></html>
+</html>
